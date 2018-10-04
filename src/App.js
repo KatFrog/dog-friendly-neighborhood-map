@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Map from './Map';
+import Locations from './Locations'
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+    render() {
+        return (
+            <div>
+                <div class='container'>
+                    <Locations />
+                </div>
+                <div class='map' id='map'>
+                    <Map />;
+                </div>
+            </div>
+        ) // end of return statement
+    }  // end of render
+} // end of class
 
 export default App;
