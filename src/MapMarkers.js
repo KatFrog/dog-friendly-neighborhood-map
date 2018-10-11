@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import map from './Map'
+import { map } from './Map'
 
 let map_makers = [];
 

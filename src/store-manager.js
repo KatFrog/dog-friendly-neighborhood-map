@@ -1,4 +1,4 @@
-import map from './Map';
+import { map } from './Map';
 
 export default function storeManager(state, action) {
     let newState = {...state};
