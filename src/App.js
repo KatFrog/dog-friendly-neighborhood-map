@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import Map from './Map';
-import Locations from './Locations'
 import './App.css';
+
+// const generateOptions = () => {
+//     let loc_types = store.getState().loc_type;
+//     loc_types.forEach((loc) => {
+//         // create an entry in the options variable
+//     });
+// } // end of generateOptions
 
 class App extends Component {
     render() {
         return (
             <div>
-                <div class='container'>
-                    <Locations />
+                <div className='container' id="loc_container">
+
                 </div>
-                <div class='map' id='map'>
+
                     <Map />;
-                </div>
             </div>
-        ) // end of return statement
+        ); // end of return statement
     }  // end of render
-} // end of class
+} // end of App
 
 export default App;
