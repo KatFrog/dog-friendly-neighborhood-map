@@ -15,9 +15,10 @@ const mapDispatchToProps = (dispatch) => {
                 type: option,
             })
         } // end of filterSelection
-    };
-
+    }; // end of return
 } // end of mapDispatchToProps
+
+
 
 class LocationList extends Component {
     static propTypes = {
@@ -28,16 +29,26 @@ class LocationList extends Component {
         selectedOption: null
     }
 
+    changeFilter = (option) => {
+        this.props.filterSelection(option.value);
+        this.setState({selectedOption: option});
+    } // end of changeFilter
+
+    resetFilters = (option) => {
+        this.props.filterSelection(option);
+        this.setState({selectedOption: null});
+    } // end of resetFilters
+
     render() {
         const { options } = this.props;
         return (
             <div className='locations-container' id="loc_container">
-                <button id='show-locs'  className="locs" onClick={() => this.props.filterSelection("SHOW-ALL")}>Show All Locations</button>
-                <button id='hide-locs'  className="locs" onClick={() => this.props.filterSelection("HIDE-ALL")}>Hide All Locations</button>
+                <button id='show-locs'  className="locs" onClick={() => this.resetFilters("SHOW-ALL")}>Show All Locations</button>
+                <button id='hide-locs'  className="locs" onClick={() => this.resetFilters("HIDE-ALL")}>Hide All Locations</button>
                 <Select
                     className="location-selector"
                     value={this.state.selectedOption}
-                    onChange = {(option) => this.props.filterSelection(option.value)}
+                    onChange = {(option) => this.changeFilter(option)}
                     options={options}
                     placeholder="Filter locations"
                 />
