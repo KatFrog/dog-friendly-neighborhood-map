@@ -1,4 +1,4 @@
-import { map } from './Map';
+import { map } from '../Components/Map';
 
 export default function storeManager(state, action) {
     let newState = {...state};
@@ -23,36 +23,37 @@ export default function storeManager(state, action) {
                 newState.currently_shown.push(loc);
             }
         }); // end of forEach
+        console.log(filter);
     }
 
     // Main logic in the reducer
     switch (action.type) {
         case "SHOW-RESTAURANT":
-            filterMapMarker("restaurant");
+            //filterMapMarker("restaurant");
             filterLocations("restaurant");
             return newState;
         case "SHOW-PARK":
-            filterMapMarker("park");
+            //filterMapMarker("park");
             filterLocations("park");
             return newState;
         case "SHOW-COFFEE-SHOP":
-            filterMapMarker("coffee-shop");
+            //filterMapMarker("coffee-shop");
             filterLocations("coffee-shop");
             return newState;
-        case "SHOW-STORE":
-            filterMapMarker("store");
-            filterLocations("store");
+        case "SHOW-PET-STORE":
+            //filterMapMarker("store");
+            filterLocations("pet-store");
             return newState;
         case "SHOW-DOG-PARK":
-            filterMapMarker("dog-park");
+            //filterMapMarker("dog-park");
             filterLocations("dog-park");
             return(newState);
         case "SHOW-ALL":
-            filterMapMarker("");
+            //filterMapMarker("");
             filterLocations("");
             return (newState);
         case "HIDE-ALL":
-            filterMapMarker("--hide--");
+            //filterMapMarker("--hide--");
             filterLocations("--hide--");
             return newState;
         default:

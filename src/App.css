@@ -24,21 +24,42 @@ input {
 .map {
   bottom:0px;
   height: 100%;
-  left: 220px;
+  left: 300px;
   position: absolute;
   right: 0px;
 }
 
-.locations-box {
+.locations-container {
     background: #fff;
-    border: 1px solid #999;
-    border-radius: 3px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
     line-height: 35px;
-    padding: 10px 10px 30px 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.location-selector {
+    height: 40px;
+    margin: 10px auto 10px auto;
+    text-align: center;
+    width: 200px;
+}
+
+.locs {
+    background: #bebcf4;
+    margin: 10px auto 10px auto;
+    padding: 20px;
+    text-align: center;
+    width:150px;
+}
+
+.location-container {
+    
+}
+
+.location-list {
+    list-style-type: none;
     text-align: left;
-    width: 340px;
 }
