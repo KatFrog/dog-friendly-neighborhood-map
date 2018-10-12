@@ -10,19 +10,15 @@ function loadScript(url, callback) {
     new_script.src = url;
     if (callback) { new_script.onload = callback }
     document.head.appendChild(new_script);
-}
-
-
+} // end of loadScript
 
 function initMap()  {
     this.map = new window.google.maps.Map(document.getElementById('map'), {
         center: {lat: 34.005652, lng: -84.478167},
         zoom: 13,
         mapTypeControl: false,
-    }); // end of map declaration
+    }); // end of initMap
 }
-
-export let map;
 
 class Map extends Component {
     render() {

@@ -24,7 +24,7 @@ class CurrentList extends Component {
                                 loc={loc}
                             />
                         </li>); // end of return
-                    }) // end of forEach loop
+                    }) // end of map loop
                 }
                 </ol>
             </div>);
