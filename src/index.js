@@ -5,8 +5,8 @@ import App from './App';
 import  { createStore } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import storeManager from './store-manager';
-import initialState from './initialState';
+import storeManager from './store/store-manager';
+import initialState from './store/initialState';
 
 const store = createStore(storeManager, initialState);
 const rootElement = document.getElementById('root');
@@ -18,4 +18,4 @@ ReactDOM.render((
 ), rootElement);
 
 
-serviceWorker.register();
+serviceWorker.unregister();
