@@ -56,10 +56,17 @@ input {
 }
 
 .location-container {
-    
+
 }
 
 .location-list {
     list-style-type: none;
     text-align: left;
+}
+
+.attribution {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 10px;
+    width: 300px;
 }

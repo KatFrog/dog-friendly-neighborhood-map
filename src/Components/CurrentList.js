@@ -19,17 +19,19 @@ class CurrentList extends Component {
                 <ol id="location-list" className="current_list">
                 {this.props.currentList.map((loc) => {
                     return (
-                        <li>
+                        <li key={loc.place_id}>
                             <Location
                                 loc={loc}
+                                map={this.props.map}
                             />
                         </li>); // end of return
                     }) // end of map loop
                 }
                 </ol>
-            </div>);
-    } // end of render
-} // end of CurrentList
+            </div>
+        );
+    }
+}
 
 
 export default connect(mapStateToProps)(CurrentList);
