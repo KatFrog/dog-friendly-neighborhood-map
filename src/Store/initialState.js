@@ -22,7 +22,7 @@ const initialState =  {
             name: "Cool Beans Coffee Roasters",
             place_id: 'ChIJqyMC4yQU9YgRGt8e9w6p7BE',
             location: {
-                lat:33-9531598,
+                lat: 33.9531598,
                 lng:-84.5507611,
             },
             loc_type: 'coffee-shop', // from list: coffee-shop, store, restaurant, park, dog-park
@@ -53,11 +53,12 @@ const initialState =  {
         },
     ],
     currently_shown: [],
-    neighborhood_map: {
-        center: {lat: 34.005652, lng: -84.478167},
-        zoom: 13,
-        mapTypeControl: false,
-    },
+
+    // neighborhood_map: {
+    //     center: {lat: 34.005652, lng: -84.478167},
+    //     zoom: 13,
+    //     mapTypeControl: false,
+    // },
 }
 
 //Show all locations as a default for when the app starts

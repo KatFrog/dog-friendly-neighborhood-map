@@ -6,7 +6,7 @@ import Select from 'react-select';
 const mapStateToProps = (state) => {
     const options = state.loc_type;
     return { options };
-} // end of mapStateToProps
+} 
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -14,13 +14,13 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({
                 type: option,
             })
-        } // end of filterSelection
-    }; // end of return
-} // end of mapDispatchToProps
+        }
+    };
+}
 
 
 
-class LocationList extends Component {
+class LocationFilters extends Component {
     static propTypes = {
         options: PropTypes.arrayOf(PropTypes.object).isRequired,
         filterSelection: PropTypes.func.isRequired,
@@ -42,7 +42,7 @@ class LocationList extends Component {
     render() {
         const { options } = this.props;
         return (
-            <div className='locations-container' id="loc_container">
+            <div className='filters-container' id="filters-container">
                 <button id='show-locs'  className="locs" onClick={() => this.resetFilters("SHOW-ALL")}>Show All Locations</button>
                 <button id='hide-locs'  className="locs" onClick={() => this.resetFilters("HIDE-ALL")}>Hide All Locations</button>
                 <Select
@@ -50,12 +50,12 @@ class LocationList extends Component {
                     value={this.state.selectedOption}
                     onChange = {(option) => this.changeFilter(option)}
                     options={options}
-                    placeholder="Filter locations"
+                    placeholder="Filter Locations"
                 />
                 <hr />
             </div>
         );
     }
-} // end of LocationList class
+} // end of LocationFilters class
 
-export default connect(mapStateToProps, mapDispatchToProps)(LocationList);
+export default connect(mapStateToProps, mapDispatchToProps)(LocationFilters);

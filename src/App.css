@@ -29,7 +29,7 @@ input {
   right: 0px;
 }
 
-.locations-container {
+.filters-container {
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -55,11 +55,14 @@ input {
     width:150px;
 }
 
-.location-container {
-    
-}
-
 .location-list {
     list-style-type: none;
     text-align: left;
+}
+
+.attribution {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 10px;
+    width: 300px;
 }
