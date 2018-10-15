@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 const mapStateToProps = (state) => {
     const currentList = state.currently_shown;
     return { currentList };
-} // end of mapStateToProps
+}
+
 
 class CurrentList extends Component {
     static propTypes = {
@@ -24,8 +25,8 @@ class CurrentList extends Component {
                                 loc={loc}
                                 map={this.props.map}
                             />
-                        </li>); // end of return
-                    }) // end of map loop
+                        </li>); 
+                    })
                 }
                 </ol>
             </div>
