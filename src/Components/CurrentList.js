@@ -17,15 +17,15 @@ class CurrentList extends Component {
     render() {
         return (
             <div>
-                <ol id="location-list" className="current_list">
-                {this.props.currentList.map((loc) => {
+                <ol id="location-list" className="current-list">
+                {this.props.currentList.map((location) => {
                     return (
-                        <li key={loc.place_id}>
+                        <li key={location.place_id}>
                             <Location
-                                loc={loc}
+                                location={location}
                                 map={this.props.map}
                             />
-                        </li>); 
+                        </li>);
                     })
                 }
                 </ol>

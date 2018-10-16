@@ -22,11 +22,16 @@ input {
 }
 
 .map {
-  bottom:0px;
+  bottom:0;
   height: 100%;
   left: 300px;
   position: absolute;
-  right: 0px;
+  right: 0;
+}
+
+.location-image {
+    height: 200px;
+    width: 200px;
 }
 
 .filters-container {
@@ -47,7 +52,7 @@ input {
     width: 200px;
 }
 
-.locs {
+.locations {
     background: #bebcf4;
     margin: 10px auto 10px auto;
     padding: 20px;
@@ -55,9 +60,24 @@ input {
     width:150px;
 }
 
-.location-list {
+.current-list {
+    font-size: 16px;
+    font-weight: bold;
     list-style-type: none;
+}
+
+.current-list li {
+    cursor: pointer;
+    padding: 10px 5px 10px 5px;
     text-align: left;
+}
+
+.details {
+    font-size: 14px;
+    font-weight: normal;
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .attribution {

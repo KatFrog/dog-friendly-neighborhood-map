@@ -3,15 +3,17 @@ const initialState =  {
         {
             name: "Capozzi's Pizza",
             place_id: 'ChIJMa6s5zNt9YgRzVyt5eyonhE',
+            yelp_id: "QVxuVa_uOsWLyCKQsxvy0Q",
             location: {
-                lat:34.0339313,
-                lng:-84.4656767,
+                lat:34.0339151342653,
+                lng:-84.4654279080833,
             },
             loc_type: 'restaurant', // from list: coffee-shop, store, restaurant, park, dog-park
             address: '2960 Shallowford Rd, #101', // Street level address
             city: 'Marietta',
             state: "GA",
             zip: '30066',
+            photo_url: 'https://s3-media1.fl.yelpcdn.com/bphoto/aBf6n_xjcn19v-PRn2wc3A/180s.jpg',
             dfr: '7', // Dog Friendly Rating, from 0 - 10
             description: "Capozzi's has outdoor seating where they allow dogs.  "
                          + "The employees will come outside to take your order  "
@@ -21,21 +23,23 @@ const initialState =  {
         {
             name: "Cool Beans Coffee Roasters",
             place_id: 'ChIJqyMC4yQU9YgRGt8e9w6p7BE',
+            yelp_id: 'FA2aqGbhP2VO9e_fEyRgoA',
             location: {
-                lat: 33.9531598,
-                lng:-84.5507611,
+                lat: 33.9531211853027,
+                lng:-84.5508575439453,
             },
             loc_type: 'coffee-shop', // from list: coffee-shop, store, restaurant, park, dog-park
             address: '31 Mill St.', // Street level address
             city: 'Marietta',
             state: "GA",
             zip: '30060',
+            photo_url: 'https://s3-media3.fl.yelpcdn.com/bphoto/n4dLc3bNyDMrRzeiW2MeCg/o.jpg',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
             description: "Dogs are welcome inside and outside here. "
                             + "They even provide a water bowl for dogs outside.",
         },
     ],
-    loc_type: [
+    location_type: [
         {value: 'SHOW-RESTAURANT',
         label: "Restaurant",
         },
