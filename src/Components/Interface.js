@@ -16,5 +16,20 @@ export const toggleDetails = (place) => {
 }
 
 export const getDetailsFromYelp = (yelp_id) => {
+    const accessToken = {
+        method: 'GET',
+        //mode: 'no-cors',
+        headers: new Headers({
+            Authorization: 'Bearer pHYrxuIzArMgfuwGsD1pPYHWOruU3I3PRK6SlGtUCUb9dQ56xZF6LMLVTgIr9lI74TSIaaeX15DqRKJIL40O8oSJo-DeJzeRm6KoRO8qDOzK678a-LpJPfHxeg3FW3Yx'
+        })
+    }
 
+    const url = `https://api.yelp.com/v3/businesses/${yelp_id}`;
+    console.log(url);
+
+    fetch(url, accessToken).then((response) => {
+        console.log(response)})
+        .catch((err) => {
+            console.log(err)
+        });
 }
