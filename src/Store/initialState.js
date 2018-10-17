@@ -33,7 +33,7 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30060',
-            photo_url: 'https://s3-media3.fl.yelpcdn.com/bphoto/n4dLc3bNyDMrRzeiW2MeCg/o.jpg',
+            photo_url: 'https://c1.staticflickr.com/4/3785/9582114727_582892bdb0_z.jpg',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
             description: "Dogs are welcome inside and outside here. "
                             + "They even provide a water bowl for dogs outside.",
