@@ -11,21 +11,25 @@ const makeMarkerIcon = (marker_color) => {
 }
 
 // Opens and populates the info window
-const populateInfoWindow = (marker, infowindow) => {
+const populateInfoWindow = (map, marker, location, infowindow) => {
     if (infowindow.marker !== marker) {
         infowindow.marker = marker;
-        infowindow.setContent(`<div><p>${marker.title}</p>
-                                <p>${marker.position}</p></div>`);
-        infowindow.open(this.props.map, marker);
+        infowindow.setContent(`<div>
+                                <img src=${location.photo_url} alt="Photo of ${marker.title}" class="location-image">
+                                <p style="font-size: 16px;">${marker.title}</p>
+                                <p>${location.address}</p>
+                                <p>${location.city}, ${location.zip}</p>
+                                <p>${location.description}</p></div>`);
+        infowindow.open(map, marker);
         // Close the window if the marker is clicked again
-        infowindow.addListener('closeclick', function() {
-            infowindow.setContent(null);
+        infowindow.addListener('closeclick', () => {
+            infowindow.close();
         });
     }
 }
 
 export const create_map_marker = (location, map) => {
-    let largeInfoWindow = new window.google.maps.InfoWindow();
+    let largeInfoWindow = new window.google.maps.InfoWindow({maxWidth: 220});
     let defaultIcon = makeMarkerIcon('0091ff');
     let highlightIcon = makeMarkerIcon('9932CC');
     let position = location.location;
@@ -39,7 +43,7 @@ export const create_map_marker = (location, map) => {
     });
     // Pop up an info Window when a marker is clicked
     marker.addListener('click', function() {
-        populateInfoWindow(this, largeInfoWindow);
+        populateInfoWindow(map, this, location, largeInfoWindow);
     });
     // Change the marker icon when mousing over
     marker.addListener('mouseover', function() {

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Select from 'react-select';
 
 const mapStateToProps = (state) => {
-    const options = state.loc_type;
+    const options = state.location_type;
     return { options };
-} 
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -43,8 +43,8 @@ class LocationFilters extends Component {
         const { options } = this.props;
         return (
             <div className='filters-container' id="filters-container">
-                <button id='show-locs'  className="locs" onClick={() => this.resetFilters("SHOW-ALL")}>Show All Locations</button>
-                <button id='hide-locs'  className="locs" onClick={() => this.resetFilters("HIDE-ALL")}>Hide All Locations</button>
+                <button id='show-locations'  className="locations" onClick={() => this.resetFilters("SHOW-ALL")}>Show All Locations</button>
+                <button id='hide-locations'  className="locations" onClick={() => this.resetFilters("HIDE-ALL")}>Hide All Locations</button>
                 <Select
                     className="location-selector"
                     value={this.state.selectedOption}

@@ -9,7 +9,7 @@ class App extends Component {
         map: undefined,
     }
 
-    defineMap = (new_map) => {
+    storeMap = (new_map) => {
         this.setState({map: new_map});
     }
 
@@ -22,7 +22,7 @@ class App extends Component {
                 />}
                 <Map
                     map={this.state.map}
-                    setMap={this.defineMap}
+                    storeMap={this.storeMap}
                 />
             </div>
         ); // end of return statement
