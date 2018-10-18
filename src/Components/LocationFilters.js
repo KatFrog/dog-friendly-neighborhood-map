@@ -42,9 +42,9 @@ class LocationFilters extends Component {
     render() {
         const { options } = this.props;
         return (
-            <div className='filters-container' id="filters-container">
-                <button id='show-locations'  className="locations" onClick={() => this.resetFilters("SHOW-ALL")}>Show All Locations</button>
-                <button id='hide-locations'  className="locations" onClick={() => this.resetFilters("HIDE-ALL")}>Hide All Locations</button>
+            <div className="filters-container">
+                <button id='show-locations'  className="filter-button" onClick={() => this.resetFilters("SHOW-ALL")}>Show All Locations</button>
+                <button id='hide-locations'  className="filter-button" onClick={() => this.resetFilters("HIDE-ALL")}>Hide All Locations</button>
                 <Select
                     className="location-selector"
                     value={this.state.selectedOption}

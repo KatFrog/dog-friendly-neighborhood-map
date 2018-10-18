@@ -16,19 +16,22 @@ class CurrentList extends Component {
 
     render() {
         return (
-            <div>
-                <ol id="location-list" className="current-list">
-                {this.props.currentList.map((location) => {
-                    return (
-                        <li key={location.place_id}>
-                            <Location
-                                location={location}
-                                map={this.props.map}
-                            />
-                        </li>);
-                    })
-                }
+            <div className="selected-locations">
+                <ol className="current-list">
+                    {this.props.currentList.map((location) => {
+                        return (
+                            <li key={location.place_id}>
+                                <Location
+                                    location={location}
+                                    map={this.props.map}
+                                />
+                            </li>);
+                        })
+                    }
                 </ol>
+                <p className="attribution">Weather data provided by
+                <a href="https://www.openweathermap.org" target="_blank"
+                rel="noopener noreferrer">OpenWeatherMap</a>. </p>
             </div>
         );
     }

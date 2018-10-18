@@ -6,19 +6,9 @@ html, body {
     padding: 0;
 }
 
-.container {
+.location-list-container {
   height: 100%;
-  position: relative;
-}
-
-input {
-  font-size: 14px;
-}
-
-.location-button {
-    margin: 10px;
-    padding: 20px;
-    width: 48%;
+  width: 300px;
 }
 
 .map {
@@ -31,7 +21,6 @@ input {
 
 .location-image {
     height: 200px;
-    width: auto;
 }
 
 .filters-container {
@@ -42,7 +31,6 @@ input {
     height: 100%;
     line-height: 35px;
     text-align: center;
-    width: 300px;
 }
 
 .location-selector {
@@ -52,24 +40,29 @@ input {
     width: 200px;
 }
 
-.locations {
+.filter-button {
     background: #bebcf4;
     margin: 10px auto 10px auto;
-    padding: 20px;
     text-align: center;
-    width:150px;
+    width:130px;
+}
+
+.selected-locations {
+    height: 500px;
+    overflow: auto;
 }
 
 .current-list {
     font-size: 16px;
     font-weight: bold;
     list-style-type: none;
+    width: 200px;
 }
 
 .current-list li {
     cursor: pointer;
-    padding: 10px 5px 10px 5px;
     text-align: left;
+    width: 250px;
 }
 
 .details {

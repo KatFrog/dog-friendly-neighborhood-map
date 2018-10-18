@@ -16,10 +16,12 @@ class App extends Component {
     render() {
         return (
             <div>
-                <LocationFilters />
-                {this.state.map && <CurrentList
-                    map={this.state.map}
-                />}
+                <div className="location-list-container">
+                    <LocationFilters />
+                    {this.state.map && <CurrentList
+                        map={this.state.map}
+                    />}
+                </div>
                 <Map
                     map={this.state.map}
                     storeMap={this.storeMap}
