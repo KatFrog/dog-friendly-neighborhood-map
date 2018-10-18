@@ -28,6 +28,9 @@ export default function storeManager(state, action) {
         case "SHOW-DOG-PARK":
             filterLocations("dog-park");
             return(newState);
+        case "SHOW-WALKING-TRAIL":
+            filterLocations("walking-trail");
+            return(newState);
         case "SHOW-ALL":
             filterLocations("");
             return (newState);
