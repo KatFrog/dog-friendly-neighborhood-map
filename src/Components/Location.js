@@ -10,6 +10,7 @@ class Location extends Component {
         this.location_details = undefined;
     }
     static propTypes = {
+        bounds: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
         map: PropTypes.object.isRequired,
     }
@@ -30,8 +31,11 @@ class Location extends Component {
             if (!this.state.detailsOpen) {
                 this.mapMarker.setAnimation(window.google.maps.Animation.BOUNCE);
                 this.setState({detailsOpen: true});
+                this.props.map.panTo(this.mapMarker.position);
+                this.props.map.setZoom(15);
             } else {
                 this.setState({detailsOpen: false});
+                this.props.map.setZoom(12);
             }
             window.setTimeout(() => {
                 this.mapMarker.setAnimation(null);
@@ -39,6 +43,7 @@ class Location extends Component {
             toggleDetails(itemElement);
 
         });
+        this.props.bounds.extend(this.mapMarker.position);
         getWeatherData(this.props.location.location)
             .then((currentWeather) => {
                 this.setState({currentWeather: currentWeather});
@@ -51,17 +56,20 @@ class Location extends Component {
     }
 
     render() {
+        const { location } = this.props;
+        const { currentWeather } = this.state;
         const initialDisplay = {display: 'none'};
-        const imgSource = 'http://openweathermap.org/img/w/' + this.state.currentWeather.icon + '.png';
+        const imgSource = 'http://openweathermap.org/img/w/' + currentWeather.icon + '.png';
         return (
-            <div id={this.props.location.name}>
-                <span>{this.props.location.name}</span>
+            <div id={location.name}>
+                <span>{location.name}</span>
                 <ul className="details">
-                    <li style={initialDisplay}>Address: {this.props.location.address}</li>
-                    <li style={initialDisplay}>Currently Open?: Yes! </li>
-                    <li style={initialDisplay}><img alt="Weather icon" src={imgSource} /> </li>
-                    <li style={initialDisplay}>Current Temp: {this.state.currentWeather.temp}</li>
-                    <li style={initialDisplay}>Current Humidity: {this.state.currentWeather.humidity}%</li>
+                    <li style={initialDisplay} className="location-details">{location.address}</li>
+                    <li style={initialDisplay} className="location-details">{location.city}, {location.state}  {location.zip}</li>
+                    <li style={initialDisplay} className="location-details"><a href={location.website} target="_blank" rel="noopener noreferrer">{location.website}</a></li>
+                    <li style={initialDisplay} className="location-details"><img alt="Weather icon" src={imgSource} /> </li>
+                    <li style={initialDisplay} className="location-details">Current Temp: {currentWeather.temp}</li>
+                    <li style={initialDisplay} className="location-details">Current Humidity: {currentWeather.humidity}%</li>
                 </ul>
             </div>
         );

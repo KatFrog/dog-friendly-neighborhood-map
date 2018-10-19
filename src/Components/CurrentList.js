@@ -10,6 +10,11 @@ const mapStateToProps = (state) => {
 
 
 class CurrentList extends Component {
+    constructor() {
+        super();
+        this.bounds = new window.google.maps.LatLngBounds();
+    }
+
     static propTypes = {
         currentList: PropTypes.arrayOf(PropTypes.object).isRequired,
     }
@@ -22,6 +27,7 @@ class CurrentList extends Component {
                         return (
                             <li key={location.place_id}>
                                 <Location
+                                    bounds={this.bounds}
                                     location={location}
                                     map={this.props.map}
                                 />
@@ -29,6 +35,7 @@ class CurrentList extends Component {
                         })
                     }
                 </ol>
+                {this.props.map.fitBounds(this.bounds)}
                 <p className="attribution">Weather data provided by
                 <a href="https://www.openweathermap.org" target="_blank"
                 rel="noopener noreferrer">OpenWeatherMap</a>. </p>
