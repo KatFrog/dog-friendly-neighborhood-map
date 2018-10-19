@@ -12,6 +12,7 @@ class Map extends Component {
             center: {lat: 34.005652, lng: -84.478167},
             zoom: 13,
             mapTypeControl: false,
+            gestureHandling: 'greedy',
         });
         this.props.storeMap(newMap);
     }

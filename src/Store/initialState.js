@@ -12,7 +12,7 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30066',
-            website: 'https://bruesters.com/mariettaga',
+            website: 'https://brusters.com/mariettaga',
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMU8zmimkxNSvCJIBxeJcPgicEKK0sDUz3WVOTM',
             dfr: '6', // Dog Friendly Rating, from 0 - 10
             description: "An ice cream stand with outdoor seating,"
@@ -71,8 +71,10 @@ const initialState =  {
             zip: '30068',
             website: 'http://www.eastcobbpark.org',
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPvmIIXlzeNvbR4bDIxZbl4TUf7kUG_VBMZqPO0',
-            dfr: '8', // Dog Friendly Rating, from 0 - 10
-            description: " ",
+            dfr: '9', // Dog Friendly Rating, from 0 - 10
+            description: "A large outdoor park with a field for playing fetch, "
+                            + "several walking trails, and dog poop stations.  "
+                            + "Please nice bathrooms and a water fountains.",
         },
         {
             place_id: '4',
@@ -89,7 +91,12 @@ const initialState =  {
             website: 'https://www.roswellgov.com/Home/Components/FacilityDirectory/FacilityDirectory/17/1944',
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPXxlCss7lEKPX16OB-kpVbXYnIVluV0NVGC1A0',
             dfr: '8', // Dog Friendly Rating, from 0 - 10
-            description: " ",
+            description: "A wonderful park and dog park, with paths cut "
+                            + "through forest for walking.  The dog park has "
+                            + "two areas for off-leash running, one for small "
+                            + "dogs and one for large dogs.  There is a nice "
+                            + "memorial for Leita Thompson next to the trails "
+                            + "with comfortable seating and a fountain.",
         },
         {
             place_id: '5',
@@ -105,8 +112,11 @@ const initialState =  {
             zip: '30064',
             website: 'http://mariettapizza.com',
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMCxD-XSSXAfyrZDs3uzsXU6Pzeaih8pXOGxg-V',
-            dfr: '7', // Dog Friendly Rating, from 0 - 10
-            description: " ",
+            dfr: '5', // Dog Friendly Rating, from 0 - 10
+            description: "Outdoor seating with umbrellas, the wait staff "
+                            + "happily bring water out for dogs.  The only "
+                            + "drawback is the noise from the street and "
+                            + "the occasionally train passing by.",
         },
         {
             place_id: '6',
@@ -181,7 +191,9 @@ const initialState =  {
             website: 'https://cobbcounty.org/index.php?option=com_content&view=article&id=79&catid=9&Itemid=2799',
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPU6cPyeEtKjhBoZJiBV94sVMBHGAhTdpwL_Rlp',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
-            description: " ",
+            description: "A lovely dog park with separate areas for small and "
+                            + "large dogs, a plethora of dog poop stations, "
+                            + "and water fountains for the dogs.",
         },
         {
             place_id: '10',
@@ -198,7 +210,14 @@ const initialState =  {
             website: 'https://www.woodstockga.gov/773/Woofstock-Park',
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMM3Cym1S8rbD7O-n7H9QygMLs-tPrxG4b-HYBd',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
-            description: " ",
+            description: "The dog park itself is beautiful, with large, "
+                            + "separate ares for small and large dogs.  There "
+                            + "is also play equipment for the dogs, such as "
+                            + "a ramp for running across.  The dog park also "
+                            + "serves as a trail head for the Noonday Creek "
+                            + "trail.  The trail is smooth and paved, and you "
+                            + "can walk either to downtown Woodstock or towards "
+                            + "Highway 92.",
         },
     ],
     currently_shown: [],
