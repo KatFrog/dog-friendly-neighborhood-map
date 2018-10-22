@@ -18,4 +18,4 @@ ReactDOM.render((
 ), rootElement);
 
 
-serviceWorker.unregister();
+serviceWorker.register('./src/App.js');

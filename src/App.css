@@ -1,26 +1,50 @@
 html, body {
-    font-family: Arial, serif, sans-serif;
+    background-color: #bdbdc9;
+    font-family: Roboto, Arial, serif, sans-serif;
     font-size: 16px;
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-.aria-hidden {
+.milkbone-menu {
+    background-color: #e1e1ef;
+    border: 2px solid #189618;
+    border-radius: 5px;
+    box-shadow: 3px 3px #888888;
+    color: #189618;
+    font-weight: bolder;
+    margin: 10px 0 10px 10px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    transition: All 250ms easy;
+    z-index: 10;
+}
+
+.milkbone-menu:active {
+    box-shadow: none;
+    top: 5px;
+    transition: All 250ms easy;
+}
+
+.hidden {
     display: none;
 }
 
-.location-list-container {
-  height: 100%;
-  width: 300px;
+.sidebar {
+    display: block;
+    height: 100%;
+    overflow: auto;
+    width: 320px;
 }
 
 .map {
-  bottom:0;
-  height: 100%;
-  left: 300px;
-  position: absolute;
-  right: 0;
+    bottom:0;
+    height: 100%;
+    left: 320px;
+    position: absolute;
+    right: 0;
 }
 
 .location-image {
@@ -28,30 +52,46 @@ html, body {
 }
 
 .filters-container {
-    background: #fff;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
-    line-height: 35px;
-    text-align: center;
+    width: 300px;
 }
 
 .location-selector {
+    color: black;
+    font-size: 16px;
     height: 40px;
-    margin: 10px auto 10px auto;
+    margin: 10px auto 10px 20px;
     text-align: center;
     width: 200px;
 }
 
+.location-selector__control {
+    background-color: #e1e1ef !important;
+    border-color: #4c46c4 !important;
+    border-width: 2px !important;
+}
+
+.location-selector__indicators {
+    color: black;
+}
+
+.location-selector__placeholder {
+    color: #1b11e0 !important;
+}
+
 .filter-button {
-    background: #bebcf4;
+    background: #89179b;
+    color: white;
     margin: 10px auto 10px auto;
     text-align: center;
     width:130px;
 }
 
 .selected-locations {
+    border-bottom: thick double #1f1f91;
     height: 500px;
     overflow: auto;
 }
@@ -59,8 +99,9 @@ html, body {
 .current-list {
     font-size: 16px;
     font-weight: bold;
+    line-height: 2;
     list-style-type: none;
-    width: 200px;
+    padding: 20px;
 }
 
 .current-list li {
@@ -69,7 +110,12 @@ html, body {
     width: 250px;
 }
 
+.location {
+    border-bottom: thick double #9e9ebc;
+}
+
 .details {
+    line-height: 1;
     list-style-type: none;
     padding: 10px;
     text-decoration: none;
@@ -86,4 +132,14 @@ html, body {
     font-weight: normal;
     margin: 10px;
     width: 300px;
+}
+
+@media screen and (max-width: 800px) {
+    .map {
+        left: 0;
+    }
+
+    .sidebar {
+        display: none;
+    }
 }
