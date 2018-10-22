@@ -12,7 +12,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30066',
-            website: 'https://brusters.com/mariettaga',
+            website:
+                {
+                    url: 'https://brusters.com/mariettaga',
+                    name: 'www.brusters.com'
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMU8zmimkxNSvCJIBxeJcPgicEKK0sDUz3WVOTM',
             dfr: '6', // Dog Friendly Rating, from 0 - 10
             description: "An ice cream stand with outdoor seating,"
@@ -31,7 +35,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30066',
-            website: 'http://www.capozzissandyplains.com/',
+            website:
+                {
+                    url: 'http://www.capozzissandyplains.com/',
+                    name: 'www.capozzissandyplains.com',
+                },
             photo_url: 'https://s3-media1.fl.yelpcdn.com/bphoto/aBf6n_xjcn19v-PRn2wc3A/180s.jpg',
             dfr: '7', // Dog Friendly Rating, from 0 - 10
             description: "Capozzi's has outdoor seating where they allow dogs.  "
@@ -51,7 +59,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30060',
-            website: 'http://coolbeanscoffeeroasters.com/',
+            website:
+                {
+                    url: 'http://coolbeanscoffeeroasters.com/',
+                    name: 'www.coolbeanscoffeeroasters.com',
+                },
             photo_url: 'https://c1.staticflickr.com/4/3785/9582114727_582892bdb0_z.jpg',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
             description: "Dogs are welcome inside and outside here. "
@@ -69,7 +81,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30068',
-            website: 'http://www.eastcobbpark.org',
+            website:
+                {
+                    url: 'http://www.eastcobbpark.org',
+                    name: 'www.eastcobbpark.org',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPvmIIXlzeNvbR4bDIxZbl4TUf7kUG_VBMZqPO0',
             dfr: '9', // Dog Friendly Rating, from 0 - 10
             description: "A large outdoor park with a field for playing fetch, "
@@ -88,7 +104,11 @@ const initialState =  {
             city: 'Roswell',
             state: "GA",
             zip: '30075',
-            website: 'https://www.roswellgov.com/Home/Components/FacilityDirectory/FacilityDirectory/17/1944',
+            website:
+                {
+                    url: 'https://www.roswellgov.com/Home/Components/FacilityDirectory/FacilityDirectory/17/1944',
+                    name: 'www.roswellgov.com',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPXxlCss7lEKPX16OB-kpVbXYnIVluV0NVGC1A0',
             dfr: '8', // Dog Friendly Rating, from 0 - 10
             description: "A wonderful park and dog park, with paths cut "
@@ -105,12 +125,16 @@ const initialState =  {
                 lat: 33.952105,
                 lng: -84.550415,
             },
-            loc_type: 'coffee-shop', // from list location_type
+            loc_type: 'restaurant', // from list location_type
             address: '3 Whitlock Av. SW', // Street level address
             city: 'Marietta',
             state: "GA",
             zip: '30064',
-            website: 'http://mariettapizza.com',
+            website:
+                {
+                    url: 'http://mariettapizza.com',
+                    name: 'www.mariettapizza.com',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMCxD-XSSXAfyrZDs3uzsXU6Pzeaih8pXOGxg-V',
             dfr: '5', // Dog Friendly Rating, from 0 - 10
             description: "Outdoor seating with umbrellas, the wait staff "
@@ -130,7 +154,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30066',
-            website: 'https://www.petsuppliesplus.com/Store/GA/Marietta/Marietta/8041',
+            website:
+                {
+                    url: 'https://www.petsuppliesplus.com/Store/GA/Marietta/Marietta/8041',
+                    name: 'www.petsuppliesplus.com',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPDkGxO9LicFqy-2esEsqkaQ1tpqefehYHVesDU',
             dfr: '9', // Dog Friendly Rating, from 0 - 10
             description: "A lovely pet store with incredibly friendly employees"
@@ -148,7 +176,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30066',
-            website: 'https://www.starbucks.com/store-locator/store/1015648/sandy-plains-gordy-3631-sandy-plains-rd-marietta-ga-30066-us',
+            website:
+                {
+                    url: 'https://www.starbucks.com/store-locator/store/1015648/sandy-plains-gordy-3631-sandy-plains-rd-marietta-ga-30066-us',
+                    name: 'www.starbucks.com',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipOuBYX38l4ArE6ZQYO91ZEbN-Dn9rZSL2lAtCB6',
             dfr: '8', // Dog Friendly Rating, from 0 - 10
             description: "Starbucks allows dogs in their outdoor seating "
@@ -168,7 +200,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30075',
-            website: 'https://www.starbucks.com/store-locator/store/6613/hwy-92-mabry-rd-4646-woodstock-rd-roswell-ga-300751677-us',
+            website:
+                {
+                    url: 'https://www.starbucks.com/store-locator/store/6613/hwy-92-mabry-rd-4646-woodstock-rd-roswell-ga-300751677-us',
+                    name: 'www.starbucks.com',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMAaFmrdb6ZIuQbApcdxA3r4sXGtyZixapCw7Gq',
             dfr: '8', // Dog Friendly Rating, from 0 - 10
             description: "Starbucks allows dogs in their outdoor seating "
@@ -188,7 +224,11 @@ const initialState =  {
             city: 'Marietta',
             state: "GA",
             zip: '30066',
-            website: 'https://cobbcounty.org/index.php?option=com_content&view=article&id=79&catid=9&Itemid=2799',
+            website:
+                {
+                    url: 'https://cobbcounty.org/index.php?option=com_content&view=article&id=79&catid=9&Itemid=2799',
+                    name: 'www.cobbcounty.org',
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipPU6cPyeEtKjhBoZJiBV94sVMBHGAhTdpwL_Rlp',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
             description: "A lovely dog park with separate areas for small and "
@@ -207,7 +247,11 @@ const initialState =  {
             city: 'Woodstock',
             state: "GA",
             zip: '30188',
-            website: 'https://www.woodstockga.gov/773/Woofstock-Park',
+            website:
+                {
+                    url: 'https://www.woodstockga.gov/773/Woofstock-Park',
+                    name: 'www.woodstockga.gov'
+                },
             photo_url: 'https://lh3.ggpht.com/p/AF1QipMM3Cym1S8rbD7O-n7H9QygMLs-tPrxG4b-HYBd',
             dfr: '10', // Dog Friendly Rating, from 0 - 10
             description: "The dog park itself is beautiful, with large, "
