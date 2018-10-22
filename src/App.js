@@ -32,7 +32,7 @@ class App extends Component {
 
     render() {
         return (
-                <div>
+                <div role="main">
                     <span>☰</span>
                     <div className="location-list-container">
                         <LocationFilters />
