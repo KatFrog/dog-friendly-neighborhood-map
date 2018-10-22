@@ -19,27 +19,24 @@ const populateInfoWindow = (map, marker, location, infowindow) => {
 
 export const create_map_marker = (location, map) => {
     let largeInfoWindow = new window.google.maps.InfoWindow({maxWidth: 220});
-    let iconColor, zIndex, savedIndex;
-    const maxZIndex = 999;
+    let iconColor;
+    const maxZIndex = 110;
     switch (location.dfr) {
         case "10":
             iconColor = 'icons/purple-paw.png';
-            zIndex = 100;
         break;
         case "9":
         case "8":
             iconColor = 'icons/yellow-paw.png';
-            zIndex = 80;
             break;
         case "7":
         case "6":
             iconColor = 'icons/green-paw.png';
-            zIndex = 60;
             break;
         default:
             iconColor = 'icons/blue-paw.png';
-            zIndex = 10;
     }
+    let zIndex = location.dfr * 10;
     let defaultIcon = iconColor;
     let highlightIcon = 'icons/pink-star-face.png';
     let position = location.location;
@@ -59,13 +56,12 @@ export const create_map_marker = (location, map) => {
     });
     // Change the marker icon when mousing over
     marker.addListener('mouseover', function() {
-        savedIndex = marker.zIndex;
         marker.zIndex = maxZIndex;
         marker.setIcon(highlightIcon);
     });
     // Change the marker back after moving mouse away
     marker.addListener('mouseout', function() {
-        marker.zIndex = savedIndex;
+        marker.zIndex = location.dfr * 10;
         marker.setIcon(defaultIcon);
     });
     return marker;

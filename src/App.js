@@ -17,33 +17,54 @@ class App extends Component {
         }
     }
 
+    componentDidMount () {
+        document.getElementById('milkboneMenu').addEventListener('click', (e) => {
+            console.log(e);
+            e.preventDefault();
+            this.toggleSidebar()
+        });
+    }
+
     state = {
         googleAPIReady: false,
         map: undefined,
-    }
-
-    mapLoaded = () => {
-
+        sidebarShowing: true,
     }
 
     storeMap = (new_map) => {
         this.setState({map: new_map});
     }
 
+    toggleSidebar = () => {
+        let mapElements = document.getElementsByClassName('map');
+        let sidebarElements = document.getElementsByClassName('sidebar');
+        if (this.state.sidebarShowing) {
+            this.setState({sidebarShowing: false});
+            mapElements[0].style.left = '0';
+            sidebarElements[0].style.display = 'none';
+        } else {
+            this.setState({sidebarShowing: true});
+            mapElements[0].style.left = '300px';
+            sidebarElements[0].style.display = 'block';
+        }
+    }
+
     render() {
         return (
                 <div role="main">
-                    <span>☰</span>
-                    <div className="location-list-container">
+                    <span id='milkboneMenu' className='milkbone-menu'>☰</span>
+                    <div className="sidebar" id='sidebar'>
                         <LocationFilters />
                         {this.state.map && <CurrentList
                             map={this.state.map}
                         />}
                     </div>
-                    {this.state.googleAPIReady && <Map
-                        map={this.state.map}
-                        storeMap={this.storeMap}
-                    />}
+                    <div id="mapDiv">
+                        {this.state.googleAPIReady && <Map
+                            map={this.state.map}
+                            storeMap={this.storeMap}
+                        />}
+                    </div>
                 </div>
         );
     }

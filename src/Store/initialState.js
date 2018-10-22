@@ -2,7 +2,7 @@ const initialState =  {
     locations: [
         {
             place_id: '0',
-            name: "Bruester's Ice Cream",
+            name: "Bruster's Ice Cream",
             location: {
                 lat: 34.0424023,
                 lng: -84.48212559999999,

@@ -21,24 +21,26 @@ class CurrentList extends Component {
 
     render() {
         return (
-            <div className="selected-locations">
-                <label id='curent-list-label' className='aria-hidden'>Current list of locations</label>
-                <ol className="current-list" role='group' aria-labelledby='current-list-label'>
-                    {this.props.currentList.map((location) => {
-                        return (
-                            <li key={location.place_id}>
-                                <Location
-                                    bounds={this.bounds}
-                                    location={location}
-                                    map={this.props.map}
-                                />
-                            </li>);
-                        })
-                    }
-                </ol>
+            <div>
+                <div className="selected-locations">
+                    <label id='curent-list-label' className='hidden'>Current list of locations</label>
+                    <ol className="current-list" role='group' aria-labelledby='current-list-label'>
+                        {this.props.currentList.map((location) => {
+                            return (
+                                <li key={location.place_id}>
+                                    <Location
+                                        bounds={this.bounds}
+                                        location={location}
+                                        map={this.props.map}
+                                    />
+                                </li>);
+                            })
+                        }
+                    </ol>
+                </div>
                 {this.props.map.fitBounds(this.bounds)}
-                <p className="attribution">Weather data provided by
-                <a href="https://www.openweathermap.org" target="_blank"
+                <p className="attribution" role="contentinfo">Weather data
+                 provided by <a href="https://www.openweathermap.org" target="_blank"
                 rel="noopener noreferrer">OpenWeatherMap</a>. </p>
             </div>
         );
