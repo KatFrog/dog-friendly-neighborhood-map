@@ -22,7 +22,8 @@ class CurrentList extends Component {
     render() {
         return (
             <div className="selected-locations">
-                <ol className="current-list">
+                <label id='curent-list-label' className='aria-hidden'>Current list of locations</label>
+                <ol className="current-list" role='group' aria-labelledby='current-list-label'>
                     {this.props.currentList.map((location) => {
                         return (
                             <li key={location.place_id}>

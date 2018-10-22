@@ -2,7 +2,7 @@
 // to properly work.
 
 export const toggleDetails = (place) => {
-    let childList = place.getElementsByTagName('li');
+    let childList = place.getElementsByClassName('details');
     for (let i = 0; i< childList.length; ++i)
     {
         let currentState = childList[i].style.display;
@@ -29,4 +29,8 @@ export const getWeatherData = (location) => {
             };
             return currentWeather;
         });
+
+    // Uncomment the following code to test Location.js when weather is not available
+    // return new Promise((resolve, reject) => {
+    //     reject(new Error('Testing'))});
 }

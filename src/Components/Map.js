@@ -20,7 +20,8 @@ class Map extends Component {
     render() {
         return (
             <div>
-                <div className='map' id='map'> </div>
+                <label id="aria-map-description" htmlFor='map' className='aria-hidden'>Map Application showing dog friendly locations</label>
+                <div className='map' id='map' role="region" aria-labelledby="aria-map-description"> </div>
             </div>
         );
     }

@@ -6,6 +6,10 @@ html, body {
     padding: 0;
 }
 
+.aria-hidden {
+    display: none;
+}
+
 .location-list-container {
   height: 100%;
   width: 300px;
