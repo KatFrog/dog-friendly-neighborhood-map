@@ -1,6 +1,6 @@
 # East Cobb Dog-Friendly Neighborhood Maps  
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
- ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple)![OpenWeatherMap](https://img.shields.io/badge/openweathermap-v2.5-brightgreen.svg)![React](https://img.shields.io/badge/react-v16.5.2-ff69b4.svg) 
+ ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple) ![OpenWeatherMap](https://img.shields.io/badge/openweathermap-v2.5-brightgreen.svg) ![React](https://img.shields.io/badge/react-v16.5.2-ff69b4.svg)  
 ![Redux](https://img.shields.io/badge/redux-v4.0.0-a151cc.svg)
 
 This is my final project to complete my Front End Nanodegree from Udacity.  The
