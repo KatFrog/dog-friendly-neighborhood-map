@@ -19,7 +19,6 @@ class App extends Component {
 
     componentDidMount () {
         document.getElementById('milkboneMenu').addEventListener('click', (e) => {
-            console.log(e);
             e.preventDefault();
             this.toggleSidebar()
         });
@@ -38,14 +37,12 @@ class App extends Component {
     toggleSidebar = () => {
         let mapElements = document.getElementsByClassName('map');
         let sidebarElements = document.getElementsByClassName('sidebar');
-        if (this.state.sidebarShowing) {
-            this.setState({sidebarShowing: false});
-            mapElements[0].style.left = '0';
-            sidebarElements[0].style.display = 'none';
-        } else {
-            this.setState({sidebarShowing: true});
-            mapElements[0].style.left = '300px';
+        if (sidebarElements[0].style.display  === 'none') {
             sidebarElements[0].style.display = 'block';
+            mapElements[0].style.left = '300px';
+        } else {
+            sidebarElements[0].style.display = 'none';
+            mapElements[0].style.left = '0';
         }
     }
 
