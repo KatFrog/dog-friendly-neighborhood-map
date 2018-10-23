@@ -29,3 +29,12 @@ This app was created using:
 Side note:  While I do the majority of state management with Redux, I used
 local state management with React in situations where I needed to keep
 track of information that pertains to the view of the single component.
+
+##Installation
+To install this application:
+1. Download or clone the repository.
+2. Change directories to the application directory.
+3. Run the command "npm install".
+4. Run the command "npm start".
+
+That's it!  Now you can find lots of dog-friendly locations here in East Cobb.
