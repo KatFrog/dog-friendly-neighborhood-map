@@ -31,10 +31,29 @@ local state management with React in situations where I needed to keep
 track of information that pertains to the view of the single component.
 
 ## Installation
-To install this application:
+### Prerequisites
+Before installing this application, you need:
+- an API key from Google Maps,
+- an API key from OpenWeatherMap,
+- Node version 10.12 or higher,
+- npm version 6.4.1 or higher, and
+- an environment variable file.
+
+You need to create your own environment variable file:
+1. Create a file called ".env"
+2.  Add the following lines:
+    REACT_APP_WEATHER_API_KEY={Insert Your API Key Here}
+    REACT_APP_WEATHER_URL=https://api.openweathermap.org/data/2.5/weather
+    REACT_APP_GOOGLE_MAPS_API_KEY={Insert Your API Key Here}
+    REACT_APP_GOOGLE_MAPS_URL=https://maps.googleapis.com/maps/api/js?&v=3&key=
+3. Add your Google Maps and OpenWeatherMap API keys in the appropriate variables.
+
+### Instructions
+
 1. Download or clone the repository.
 2. Change directories to the application directory.
-3. Run the command "npm install".
-4. Run the command "npm start".
+3. Move the .env file here.
+4. Run the command "npm install".
+5. Run the command "npm start".
 
 That's it!  Now you can find lots of dog-friendly locations here in East Cobb.
