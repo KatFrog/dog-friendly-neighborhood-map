@@ -1,5 +1,6 @@
 # East Cobb Dog-Friendly Neighborhood Maps  
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg) ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple)![node (tag)](https://img.shields.io/node/v/passport/latest.svg) ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/badges/shields.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+ ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple)![node (tag)](https://img.shields.io/node/v/passport/latest.svg) ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/badges/shields.svg)
 
 This is my final project to complete my Front End Nanodegree from Udacity.  The
 requirements of this project are to develop a single page application featuring
