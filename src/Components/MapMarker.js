@@ -12,11 +12,13 @@ const populateInfoWindow = (map, marker, location, infowindow) => {
         infowindow.open(map, marker);
         // Close the window if the marker is clicked again
         infowindow.addListener('closeclick', () => {
-            infowindow.close();
+            infowindow.marker = null;
+            infowindow.setContent(null);
         });
     }
 }
 
+// Creates and returns a map marker associated with the location parameter
 export const create_map_marker = (location, map) => {
     let largeInfoWindow = new window.google.maps.InfoWindow({maxWidth: 220});
     let iconColor;
