@@ -19,7 +19,6 @@ class App extends Component {
 
     componentDidMount () {
         document.getElementById('milkboneMenu').addEventListener('click', (e) => {
-            e.preventDefault();
             this.toggleSidebar()
         });
     }
