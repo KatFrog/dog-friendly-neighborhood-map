@@ -1,6 +1,6 @@
 # East Cobb Dog-Friendly Neighborhood Maps  
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
- ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple)![node (scoped with tag)](https://img.shields.io/node/v/@stdlib/stdlib/latest.svg) ![React](https://img.shields.io/badge/react-v16.5.2-ff69b4.svg) 
+ ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple)![React](https://img.shields.io/badge/react-v16.5.2-ff69b4.svg) 
 ![Redux](https://img.shields.io/badge/redux-v4.0.0-a151cc.svg)
 
 This is my final project to complete my Front End Nanodegree from Udacity.  The
@@ -37,7 +37,6 @@ track of information that pertains to the view of the single component.
 Before installing this application, you need:
 - an API key from Google Maps,
 - an API key from OpenWeatherMap,
-- Node version 10.12 or higher,
 - npm version 6.4.1 or higher, and
 - an environment variable file.
 
