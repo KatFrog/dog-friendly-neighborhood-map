@@ -42,6 +42,7 @@ Before installing this application, you need:
 You need to create your own environment variable file:
 1. Create a file called ".env"
 2.  Add the following lines of code to the file:
+
     REACT_APP_WEATHER_API_KEY={Insert Your API Key Here}
     REACT_APP_WEATHER_URL=https://api.openweathermap.org/data/2.5/weather
     REACT_APP_GOOGLE_MAPS_API_KEY={Insert Your API Key Here}
