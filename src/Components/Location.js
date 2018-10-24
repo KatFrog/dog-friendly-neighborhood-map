@@ -82,7 +82,7 @@ class Location extends Component {
         const imgSource = 'http://openweathermap.org/img/w/' + currentWeather.icon + '.png';
         return (
             <div id={location.name} className="location">
-                <span tabIndex='0'>{location.name}</span>
+                <span role='listitem' tabIndex='0'>{location.name}</span>
                 <address className="details" style={initialDisplay} tabIndex='0'>
                     <span className="location-details">
                         {location.address} <br />

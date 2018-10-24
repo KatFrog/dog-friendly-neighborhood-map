@@ -39,9 +39,9 @@ class CurrentList extends Component {
                     </ol>
                 </div>
                 {this.props.map.fitBounds(this.bounds)}
-                <p className="attribution" role="contentinfo">Weather data
+                <footer className="attribution" role="contentinfo">Weather data
                  provided by <a href="https://www.openweathermap.org" target="_blank"
-                rel="noopener noreferrer">OpenWeatherMap</a>. </p>
+                rel="noopener noreferrer">OpenWeatherMap</a>. </footer>
             </div>
         );
     }
