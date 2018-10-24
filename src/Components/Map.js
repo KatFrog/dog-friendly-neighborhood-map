@@ -15,6 +15,9 @@ class Map extends Component {
             gestureHandling: 'greedy',
         });
         this.props.storeMap(newMap);
+        if (window.screen.width <= 800) {
+            document.getElementById('map').classList.add('map-left');
+        }
     }
 
     render() {

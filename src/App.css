@@ -28,10 +28,6 @@ html, body {
     transition: All 250ms easy;
 }
 
-.hidden {
-    display: none;
-}
-
 .sidebar {
     display: block;
     height: 100%;
@@ -127,6 +123,12 @@ html, body {
     line-height: 1;
 }
 
+.weather {
+    line-height: 1;
+    list-style-type: none;
+    padding: 10px;
+}
+
 .attribution {
     font-size: 12px;
     font-weight: normal;
@@ -134,12 +136,17 @@ html, body {
     width: 300px;
 }
 
-@media screen and (max-width: 800px) {
-    .map {
-        left: 0;
-    }
+.error-message {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
 
-    .sidebar {
-        display: none;
-    }
+.map-left {
+    left: 0;
+}
+
+.hidden {
+    display: none;
 }

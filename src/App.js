@@ -3,6 +3,8 @@ import Map from './Components/Map';
 import LocationFilters from './Components/LocationFilters';
 import CurrentList from './Components/CurrentList';
 import scriptLoader from 'react-async-script-loader';
+import MilkboneMenu, { toggleSidebar } from './Components/MilkboneMenu';
+// import PropTypes from 'prop-types';
 import './App.css';
 
 const GOOGLE_MAPS_URL = process.env.REACT_APP_GOOGLE_MAPS_URL + process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -13,42 +15,41 @@ class App extends Component {
         if (isScriptLoaded && !this.props.isScriptLoaded) { // load finished
             if (isScriptLoadSucceed) {
                 this.setState({googleAPIReady: true});
+            } else {
+                this.setState({googleAPIError: true});
             }
         }
     }
 
     componentDidMount () {
-        document.getElementById('milkboneMenu').addEventListener('click', (e) => {
-            this.toggleSidebar()
+        document.getElementById('milkboneMenu').addEventListener('click', () => {
+            toggleSidebar()
         });
+        document.getElementById('milkboneMenu').addEventListener('keydown', (e) => {
+            if (e.keyCode === 13) {
+                toggleSidebar();
+            }
+        });
+        // Hide the sidebar on a smaller screen
+        if (window.screen.width < 800) {
+            document.getElementById('sidebar').classList.add('hidden');
+        }
     }
 
     state = {
         googleAPIReady: false,
+        googleAPIError: false,
         map: undefined,
-        sidebarShowing: true,
     }
 
     storeMap = (new_map) => {
         this.setState({map: new_map});
     }
 
-    toggleSidebar = () => {
-        let mapElements = document.getElementsByClassName('map');
-        let sidebarElements = document.getElementsByClassName('sidebar');
-        if (sidebarElements[0].style.display  === 'none') {
-            sidebarElements[0].style.display = 'block';
-            mapElements[0].style.left = '300px';
-        } else {
-            sidebarElements[0].style.display = 'none';
-            mapElements[0].style.left = '0';
-        }
-    }
-
     render() {
         return (
                 <div role="main">
-                    <span id='milkboneMenu' className='milkbone-menu'>☰</span>
+                    <MilkboneMenu />
                     <div className="sidebar" id='sidebar'>
                         <LocationFilters />
                         {this.state.map && <CurrentList
@@ -60,6 +61,7 @@ class App extends Component {
                             map={this.state.map}
                             storeMap={this.storeMap}
                         />}
+                        {(this.state.googleAPIError) && <p className="error-message">Google Maps is temporarily not available.  Please try again later.</p>}
                     </div>
                 </div>
         );

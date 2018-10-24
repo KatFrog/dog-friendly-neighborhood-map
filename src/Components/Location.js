@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { create_map_marker } from './MapMarker';
-import { toggleDetails, getWeatherData } from './Interface';
+import { toggleDetails, getWeatherData } from './LocationInterface';
 
 class Location extends Component {
     constructor() {
@@ -17,7 +17,7 @@ class Location extends Component {
 
     state = {
         detailsOpen: false,
-        weather_available: false,
+        weatherAvailable: false,
         currentWeather: {
             temp: "pending",
             humidity: "pending ",
@@ -61,11 +61,11 @@ class Location extends Component {
         getWeatherData(this.props.location.location)
             .then((currentWeather) => {
                 this.setState({currentWeather: currentWeather,
-                                weather_available: true,});
+                                weatherAvailable: true,});
             })
             .catch((err) => {
                 console.log(err);
-                this.setState({weather_available: false});
+                this.setState({weatherAvailable: false});
 
             });
 
@@ -77,31 +77,32 @@ class Location extends Component {
 
     render() {
         const { location } = this.props;
-        const { currentWeather, weather_available } = this.state;
-        const initialDisplay = {display: 'none'};
+        const { currentWeather, weatherAvailable } = this.state;
         const imgSource = 'http://openweathermap.org/img/w/' + currentWeather.icon + '.png';
         return (
             <div id={location.name} className="location">
-                <span tabIndex='0'>{location.name}</span>
-                <address className="details" style={initialDisplay} tabIndex='0'>
-                    <span className="location-details">
-                        {location.address} <br />
-                        {location.city}, {location.state}  {location.zip}<br />
-                        <a href={location.website.url} target="_blank" rel="noopener noreferrer">{location.website.name}</a>
-                    </span>
-                </address>
-                <label id="weather-label" htmlFor='weather-details' className='hidden'>Current weather data</label>
-                <ul className='details' id='weather-details' style={initialDisplay} aria-labelledby='weather-label'>
-                    <li className="location-details" tabIndex='0'>
-                        {
-                            weather_available
-                            ? <span>Weather:  <img alt="Weather icon" src={imgSource} /></span>
-                            : "Weather information is not available."
-                        }
-                    </li>
-                    <li className="location-details" tabIndex='0'>Current Temp: {currentWeather.temp}</li>
-                    <li className="location-details" tabIndex='0'>Current Humidity: {currentWeather.humidity}%</li>
-                </ul>
+                <span role='listitem' tabIndex='0'>{location.name}</span>
+                <div className="details hidden">
+                    <address tabIndex='0'>
+                        <span className="location-details">
+                            {location.address} <br />
+                            {location.city}, {location.state}  {location.zip}<br />
+                            <a href={location.website.url} target="_blank" rel="noopener noreferrer">{location.website.name}</a>
+                        </span>
+                    </address>
+                    <label id="weather-label" htmlFor='weather-details' className='hidden'>Current weather data</label>
+                    <ul className='weather' id='weather-details' aria-labelledby='weather-label'>
+                        <li className="location-details" tabIndex='0'>
+                            {
+                                weatherAvailable
+                                ? <span>Weather:  <img alt="Weather icon" src={imgSource} /></span>
+                                : "Weather information is not available."
+                            }
+                        </li>
+                        <li className="location-details" tabIndex='0'>Current Temp: {currentWeather.temp}</li>
+                        <li className="location-details" tabIndex='0'>Current Humidity: {currentWeather.humidity}%</li>
+                    </ul>
+                </div>
             </div>
         );
     }

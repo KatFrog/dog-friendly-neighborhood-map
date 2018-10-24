@@ -5,12 +5,11 @@ export const toggleDetails = (place) => {
     let childList = place.getElementsByClassName('details');
     for (let i = 0; i< childList.length; ++i)
     {
-        let currentState = childList[i].style.display;
-        if (currentState === "none"){
-            childList[i].style.display="block";
+        if (childList[i].classList.contains('hidden')){
+            childList[i].classList.remove('hidden');
         }
         else {
-            childList[i].style.display="none";
+            childList[i].classList.add('hidden');
         }
     }
 }

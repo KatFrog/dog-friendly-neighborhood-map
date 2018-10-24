@@ -11,6 +11,11 @@ import initialState from './Store/initialState';
 const store = createStore(storeManager, initialState);
 const rootElement = document.getElementById('root');
 
+window.gm_authFailure = () => {
+
+}
+
+
 ReactDOM.render((
     <Provider store={store}>
         <App />
