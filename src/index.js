@@ -10,17 +10,15 @@ import initialState from './Store/initialState';
 
 const store = createStore(storeManager, initialState);
 const rootElement = document.getElementById('root');
-let failedAuth = false;
+
 window.gm_authFailure = () => {
-    failedAuth = true;
+
 }
 
 
 ReactDOM.render((
     <Provider store={store}>
-        <App
-            authSuccess = {failedAuth}
-        />
+        <App />
     </Provider>
 ), rootElement);
 

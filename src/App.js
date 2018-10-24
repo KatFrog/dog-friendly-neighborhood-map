@@ -10,13 +10,10 @@ import './App.css';
 const GOOGLE_MAPS_URL = process.env.REACT_APP_GOOGLE_MAPS_URL + process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 class App extends Component {
-    // static propTypes = {
-    //     authSuccess: PropTypes.boolean.isRequired,
-    // }
 
     componentWillReceiveProps ({ isScriptLoaded, isScriptLoadSucceed }) {
         if (isScriptLoaded && !this.props.isScriptLoaded) { // load finished
-            if (isScriptLoadSucceed && this.props.authSuccess) {
+            if (isScriptLoadSucceed) {
                 this.setState({googleAPIReady: true});
             } else {
                 this.setState({googleAPIError: true});

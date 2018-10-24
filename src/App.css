@@ -123,6 +123,12 @@ html, body {
     line-height: 1;
 }
 
+.weather {
+    line-height: 1;
+    list-style-type: none;
+    padding: 10px;
+}
+
 .attribution {
     font-size: 12px;
     font-weight: normal;
