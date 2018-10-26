@@ -30,7 +30,7 @@ class App extends Component {
                 toggleSidebar();
             }
         });
-        // Hide the sidebar on a smaller screen
+        // During startup, hide the sidebar on a smaller screen
         if (window.screen.width < 800) {
             document.getElementById('sidebar').classList.add('hidden');
         }

@@ -9,6 +9,7 @@ class Location extends Component {
         this.mapMarker = undefined;
         this.location_details = undefined;
     }
+
     static propTypes = {
         bounds: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired,
@@ -78,7 +79,8 @@ class Location extends Component {
     render() {
         const { location } = this.props;
         const { currentWeather, weatherAvailable } = this.state;
-        const imgSource = 'http://openweathermap.org/img/w/' + currentWeather.icon + '.png';
+        let imgSource;
+        weatherAvailable && (imgSource = 'http://openweathermap.org/img/w/' + currentWeather.icon + '.png');
         return (
             <div id={location.name} className="location">
                 <span role='listitem' tabIndex='0'>{location.name}</span>
