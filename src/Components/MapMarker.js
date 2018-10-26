@@ -1,4 +1,3 @@
-
 // Opens and populates the info window
 const populateInfoWindow = (map, marker, location, infowindow) => {
     if (infowindow.marker !== marker) {
@@ -20,29 +19,29 @@ const populateInfoWindow = (map, marker, location, infowindow) => {
 
 // Creates and returns a map marker associated with the location parameter
 export const create_map_marker = (location, map) => {
+    const HIGHLIGHT_ICON = 'icons/pink-star-face.png';
+    const MAX_Z_INDEX = 110;
     let largeInfoWindow = new window.google.maps.InfoWindow({maxWidth: 220});
-    let iconColor;
-    const maxZIndex = 110;
+    let defaultIcon;
+    let zIndex = location.dfr * 10;
+    let position = location.location;
+    let name = location.name;
     switch (location.dfr) {
         case "10":
-            iconColor = 'icons/purple-paw.png';
+            defaultIcon = 'icons/purple-paw.png';
         break;
         case "9":
         case "8":
-            iconColor = 'icons/yellow-paw.png';
+            defaultIcon = 'icons/yellow-paw.png';
             break;
         case "7":
         case "6":
-            iconColor = 'icons/green-paw.png';
+            defaultIcon = 'icons/green-paw.png';
             break;
         default:
-            iconColor = 'icons/blue-paw.png';
+            defaultIcon = 'icons/blue-paw.png';
     }
-    let zIndex = location.dfr * 10;
-    let defaultIcon = iconColor;
-    let highlightIcon = 'icons/pink-star-face.png';
-    let position = location.location;
-    let name = location.name;
+
     let marker = new window.google.maps.Marker({
         position: position,
         title: name,
@@ -58,8 +57,8 @@ export const create_map_marker = (location, map) => {
     });
     // Change the marker icon when mousing over
     marker.addListener('mouseover', function() {
-        marker.zIndex = maxZIndex;
-        marker.setIcon(highlightIcon);
+        marker.zIndex = MAX_Z_INDEX;
+        marker.setIcon(HIGHLIGHT_ICON);
     });
     // Change the marker back after moving mouse away
     marker.addListener('mouseout', function() {
@@ -67,4 +66,4 @@ export const create_map_marker = (location, map) => {
         marker.setIcon(defaultIcon);
     });
     return marker;
-} // end of create_map_markers
+}

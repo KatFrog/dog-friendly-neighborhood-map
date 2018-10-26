@@ -4,19 +4,18 @@ import Location from './Location';
 import PropTypes from 'prop-types';
 
 const mapStateToProps = (state) => {
-    const currentList = state.currently_shown;
-    return { currentList };
+    const CURRENT_LIST = state.currently_shown;
+    return { CURRENT_LIST };
 }
 
-
-class CurrentList extends Component {
+class CURRENT_LIST extends Component {
     constructor() {
         super();
         this.bounds = new window.google.maps.LatLngBounds();
     }
 
     static propTypes = {
-        currentList: PropTypes.arrayOf(PropTypes.object).isRequired,
+        CURRENT_LIST: PropTypes.arrayOf(PropTypes.object).isRequired,
     }
 
     render() {
@@ -25,7 +24,7 @@ class CurrentList extends Component {
                 <div className="selected-locations">
                     <label id='curent-list-label' className='hidden'>Current list of locations</label>
                     <ol className="current-list" role='group' aria-labelledby='current-list-label'>
-                        {this.props.currentList.map((location) => {
+                        {this.props.CURRENT_LIST.map((location) => {
                             return (
                                 <li key={location.place_id}>
                                     <Location
@@ -47,5 +46,4 @@ class CurrentList extends Component {
     }
 }
 
-
-export default connect(mapStateToProps)(CurrentList);
+export default connect(mapStateToProps)(CURRENT_LIST);

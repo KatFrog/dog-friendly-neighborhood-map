@@ -15,6 +15,7 @@ class Map extends Component {
             gestureHandling: 'greedy',
         });
         this.props.storeMap(newMap);
+        // During startup, set the map to use the whole screen on a smaller screen
         if (window.screen.width <= 800) {
             document.getElementById('map').classList.add('map-left');
         }
