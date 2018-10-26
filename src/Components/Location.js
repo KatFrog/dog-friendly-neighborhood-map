@@ -79,8 +79,7 @@ class Location extends Component {
     render() {
         const { location } = this.props;
         const { currentWeather, weatherAvailable } = this.state;
-        let imgSource;
-        weatherAvailable && (imgSource = 'http://openweathermap.org/img/w/' + currentWeather.icon + '.png');
+        const imgSource = weatherAvailable && ('http://openweathermap.org/img/w/' + currentWeather.icon + '.png');
         return (
             <div id={location.name} className="location">
                 <span role='listitem' tabIndex='0'>{location.name}</span>
