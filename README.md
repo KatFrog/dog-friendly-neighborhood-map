@@ -1,19 +1,13 @@
-# East Cobb Dog-Friendly Neighborhood Maps  
+# East Cobb Dog-Friendly Neighborhood Map
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
  ![Google Maps](https://img.shields.io/badge/googlemaps-v3.34-brightgreen.svg?colorB=purple) ![OpenWeatherMap](https://img.shields.io/badge/openweathermap-v2.5-brightgreen.svg) ![React](https://img.shields.io/badge/react-v16.5.2-ff69b4.svg) ![Redux](https://img.shields.io/badge/redux-v4.0.0-a151cc.svg)
 
-This is my final project to complete my Front End Nanodegree from Udacity.  The
-requirements of this project are to develop a single page application featuring
-a map of your neighborhood and to add functionality to this map including:
-- highlighted locations using map markers,
-- third-party data about those locations and,
-- various ways to browse the content using filtering.
-
-To this end, I created a neighborhood map highlighting locations that are
-friendly to dogs.  I use [OpenWeatherMap](https://openweathermap.org) to display
-the current weather at each location, because most of the time I'm going
-outside with my dog.  For fun, I use custom map markers that are colored according to the
-Dog Friendly Rating (DFR) of each location.  The DFR is a combination of:
+The East Cobb Dog-Friendly Neighborhood Map features locations in and around
+East Cobb County, GA that are friendly to dogs.  The app uses
+[OpenWeatherMap](https://openweathermap.org) to display the current weather
+at each location. This app also provides custom map markers that are colored
+according to the **Dog Friendly Rating (DFR)** of each location.  The **DFR** is
+a combination of:
 - where dogs are allowed (inside and outside, or outside only),
 - whether water is provided,
 - what activities are available, and
@@ -26,10 +20,6 @@ This app was created using:
 - [prop-types](https://www.npmjs.com/package/prop-types): for type checking props being passed to a component
 - [react-async-script-loader](https://github.com/leozdgao/react-async-script-loader): to load the JavaScript Google Maps API
 - [Redux](https://redux.js.org): to manage the state (data) inside the app
-
-Side note:  While I do the majority of state management with Redux, I used
-local state management with React in situations where I needed to keep
-track of information that pertains to the view of the single component.
 
 ## Installation
 ### Prerequisites
